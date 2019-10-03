@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    <body>
+        <script>
+            var arr = ["Денис", "Александра", "Андрей", "Юрий", "Саша", "Симбиан", "Хельга", "Артем", "Екатерина", "Ярик", "Дмитрий", "Алексей", "Богдан"];
+            var str = arr.join('').toUpperCase();
+            var users = {};
+
+            // for (var i = 0; i < arr.length; i++) {
+            //     var first = arr[i][0].toUpperCase();
+            //     var counter = 0;
+            //     var pos = 0;
+
+            //     while (true) {
+            //         var index = str.indexOf(first, pos);
+            //         if (index == -1) break;
+            //         counter++;
+            //         pos = index + 1;
+            //     }
+
+            //     users[first] = counter;
+            // }
+
+            arr.forEach(function(item){
+                var first = item[0].toUpperCase();
+                var counter = 0;
+                var pos = 0;
+
+                while (true) {
+                    var index = str.indexOf(first, pos);
+                    if (!(~index)) break;
+                    counter++;
+                    pos = index + 1;
+                }
+
+                users[first] = counter;
+            });
+
+            console.log(users);
+        </script>
+    </body>
+</html>
